@@ -22,10 +22,10 @@ query = st.text_input("Enter your query here")
 
 # Show progress spinner while processing
 with st.spinner("Processing..."):
-# Call LangChain API to get answer
-# answer = lc.answer(query)
-# Show the answer
-st.write(f"Answer: {query}")
+    # Call LangChain API to get answer
+    # answer = lc.answer(query)
+    # Show the answer
+    st.write(f"Answer: {query}")
     
 
 with st.echo(code_location='below'):
