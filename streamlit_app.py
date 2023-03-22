@@ -15,6 +15,18 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+st.title("LangChain App")
+
+# Get user input
+query = st.text_input("Enter your query here")
+
+# Show progress spinner while processing
+with st.spinner("Processing..."):
+# Call LangChain API to get answer
+# answer = lc.answer(query)
+# Show the answer
+st.write(f"Answer: {query}")
+    
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
@@ -36,3 +48,6 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+        
+        
+
