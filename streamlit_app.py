@@ -1,32 +1,21 @@
-from collections import namedtuple
-import altair as alt
-import math
-import pandas as pd
 import streamlit as st
 
-"""
-# Welcome to Streamlit!
+from langchain.llms import OpenAI
+from langchain.chains import VectorDBQA
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+if store not in locals() or store is null:
+    with open("faiss_store.pkl", "rb") as f:
+        store = pickle.load(f)
 
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
-
-st.title("LangChain App")
+st.title("ETF Search")
 
 # Get user input
 query = st.text_input("Enter your query here")
 
 # Show progress spinner while processing
 with st.spinner("Processing..."):
-    # Call LangChain API to get answer
-    # answer = lc.answer(query)
-    # Show the answer
-    st.write(f"Answer: {query}")
-    
-        
-        
-
+    qa = VectorDBQA.from_chain_type(llm=OpenAI(model_name='gpt-3.5-turbo', temperature=0, openai_api_key=OPENAI_API_KEY), chain_type="stuff", vectorstore=store)
+    if query is not None:
+        st.write(f"Answer: {qa.run(query)}")
