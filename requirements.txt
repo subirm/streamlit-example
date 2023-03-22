@@ -1,5 +1,4 @@
 faiss-cpu
 langchain
 openai
-pickle
 streamlit
