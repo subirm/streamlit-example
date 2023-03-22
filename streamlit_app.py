@@ -5,9 +5,8 @@ from langchain.chains import VectorDBQA
 
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-if store not in locals() or store is null:
-    with open("faiss_store.pkl", "rb") as f:
-        store = pickle.load(f)
+with open("faiss_store.pkl", "rb") as f:
+    store = pickle.load(f)
 
 st.title("ETF Search")
 
