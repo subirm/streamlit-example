@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import langchain
 
 
 from langchain import OpenAI, VectorDBQA
