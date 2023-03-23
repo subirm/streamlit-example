@@ -1,8 +1,9 @@
 import streamlit as st
 import pickle
 
-from langchain.llms import OpenAI
-from langchain.chains import VectorDBQA
+
+from langchain import OpenAI, VectorDBQA
+
 
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
