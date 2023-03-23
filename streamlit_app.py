@@ -21,6 +21,6 @@ st.title("ETF Search")
 query = st.text_input("Enter your query here")
 
 # Show progress spinner while processing
-with st.spinner("Processing...")
+with st.spinner("Processing..."):
     if query is not None:
         st.write(f"Answer: {qa.run(query)}")
