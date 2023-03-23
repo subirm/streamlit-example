@@ -16,6 +16,6 @@ query = st.text_input("Enter your query here")
 
 # Show progress spinner while processing
 with st.spinner("Processing..."):
-    qa = VectorDBQA.from_chain_type(llm=OpenAI(model_name='gpt-3.5-turbo', temperature=0, openai_api_key=OPENAI_API_KEY), chain_type="stuff", vectorstore=store))
+    qa = VectorDBQA.from_chain_type(llm=OpenAI(model_name='gpt-3.5-turbo', temperature=0, openai_api_key=OPENAI_API_KEY), chain_type="stuff", vectorstore=store)
     if query is not None:
         st.write(f"Answer: {qa.run(query)}")
