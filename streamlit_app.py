@@ -23,4 +23,5 @@ query = st.text_input("Enter your query here")
 # Show progress spinner while processing
 with st.spinner("Processing..."):
     if query is not None and len(query) > 0 :
-        st.write(f"Answer: {qa.run(query)}")
+#         st.write(f"Answer: {qa.run(query)}")
+        st.write(f"Answer : {query}")
